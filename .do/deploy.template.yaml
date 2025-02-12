@@ -50,3 +50,6 @@ spec:
           value: 'false'
   databases:
     - name: hi-events-db
+files:
+  - source: digitalocean-start.sh
+    destination: /digitalocean-start.sh
