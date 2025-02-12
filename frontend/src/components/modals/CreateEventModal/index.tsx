@@ -149,7 +149,7 @@ export const CreateEventModal = ({onClose}: GenericModalProps) => {
                     ]}
                     mt={20}
                 />
-
+ChooseThemap:
                 {form.values.tipoticket === 'enumerado' && (
                     <Select
                         {...form.getInputProps('map')}
