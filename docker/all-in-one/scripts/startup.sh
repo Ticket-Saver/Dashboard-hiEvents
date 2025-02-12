@@ -2,12 +2,9 @@
 
 cd /app/backend
 
-if ! php artisan migrate --force; then
-    echo "============================================"
-    echo "ERROR: Migrations could not complete. Check the error above."
-    echo "Ensure DATABASE_URL is set."
-    echo "============================================"
-fi
+# Ejecutar migraciones de la base de datos
+echo "Ejecutando migraciones de la base de datos..."
+php artisan migrate --force
 
 php artisan cache:clear
 php artisan config:clear
