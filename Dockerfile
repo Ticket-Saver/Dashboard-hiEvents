@@ -13,6 +13,10 @@ COPY frontend/src/components/modals/CreateTicketModal /app/frontend/src/componen
 COPY frontend/src/components/modals/CreateEventModal /app/frontend/src/components/modals/CreateEventModal
 COPY frontend/src/components/routes/organizer/OrganizerDashboard /app/frontend/src/components/routes/organizer/OrganizerDashboard
 
+# Copiar archivos de localización
+COPY frontend/src/locales /app/frontend/src/locales
+COPY frontend/lingui.config.ts /app/frontend/
+
 # Reconstruir solo los archivos modificados
 WORKDIR /app/frontend
 RUN npm install
