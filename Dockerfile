@@ -22,8 +22,7 @@ COPY frontend/src/utils /app/frontend/src/utils
 COPY frontend/src/queries /app/frontend/src/queries
 COPY frontend/src/lib /app/frontend/src/lib
 COPY frontend/src/assets /app/frontend/src/assets
-COPY frontend/src/router.tsx /app/frontend/src/router.tsx
-COPY frontend/src/routes.tsx /app/frontend/src/routes.tsx
+COPY frontend/src/router /app/frontend/src/router
 
 # Copiar archivos de localización
 COPY frontend/src/locales /app/frontend/src/locales
