@@ -18,6 +18,7 @@ COPY frontend/src/components/routes/event/tickets.tsx /app/frontend/src/componen
 COPY frontend/src/utils /app/frontend/src/utils
 COPY frontend/src/queries /app/frontend/src/queries
 COPY frontend/src/lib /app/frontend/src/lib
+COPY frontend/src/assets /app/frontend/src/assets
 
 # Copiar archivos de localización
 COPY frontend/src/locales /app/frontend/src/locales
