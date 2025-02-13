@@ -5,8 +5,9 @@ RUN apk update && apk add --no-cache \
     nodejs \
     npm
 
-# Copiar migraciones
+# Copiar migraciones y seeds
 COPY backend/database/migrations /app/backend/database/migrations/
+COPY backend/database/seeds /app/backend/database/seeds/
 
 # Copiar todo el directorio src del frontend
 COPY frontend/src /app/frontend/src/
