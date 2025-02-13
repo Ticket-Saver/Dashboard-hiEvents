@@ -13,9 +13,11 @@ COPY frontend/src/components/modals/CreateTicketModal /app/frontend/src/componen
 COPY frontend/src/components/modals/CreateEventModal /app/frontend/src/components/modals/CreateEventModal
 COPY frontend/src/components/routes/organizer/OrganizerDashboard /app/frontend/src/components/routes/organizer/OrganizerDashboard
 
+# Copiar archivos de rutas, utilidades y dependencias
 COPY frontend/src/components/routes/event/tickets.tsx /app/frontend/src/components/routes/event/tickets.tsx
-COPY frontend/src/utils  /app/frontend/src/utils
-COPY frontend/src/queries  /app/frontend/src/queries
+COPY frontend/src/utils /app/frontend/src/utils
+COPY frontend/src/queries /app/frontend/src/queries
+COPY frontend/lib /app/frontend/lib
 
 # Copiar archivos de localización
 COPY frontend/src/locales /app/frontend/src/locales
