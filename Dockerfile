@@ -8,9 +8,19 @@ RUN apk update && apk add --no-cache \
 # Copiar migraciones
 COPY backend/database/migrations /app/backend/database/migrations/
 
-# Copiar archivos compilados del frontend
-COPY frontend/dist/* /app/frontend/dist/
+# Copiar archivos del frontend
+COPY frontend/src /app/frontend/src
+COPY frontend/package*.json /app/frontend/
+COPY frontend/vite.config.ts /app/frontend/
+COPY frontend/tsconfig*.json /app/frontend/
+COPY frontend/index.html /app/frontend/
 
+# Construir el frontend
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
+
+WORKDIR /
 COPY digitalocean-start.sh /digitalocean-start.sh
 RUN chmod +x /digitalocean-start.sh
 
