@@ -8,10 +8,14 @@ RUN apk update && apk add --no-cache \
 # Copiar migraciones
 COPY backend/database/migrations /app/backend/database/migrations/
 
-# Copiar solo los componentes modificados del frontend
+# Copiar componentes del frontend
 COPY frontend/src/components/modals/CreateTicketModal /app/frontend/src/components/modals/CreateTicketModal
 COPY frontend/src/components/modals/CreateEventModal /app/frontend/src/components/modals/CreateEventModal
 COPY frontend/src/components/routes/organizer/OrganizerDashboard /app/frontend/src/components/routes/organizer/OrganizerDashboard
+
+# Copiar archivos de rutas y tickets
+COPY frontend/src/components/routes/event/tickets.tsx /app/frontend/src/components/routes/event/
+COPY frontend/src/assets/venue-maps /app/frontend/src/assets/venue-maps
 
 # Copiar archivos de localización
 COPY frontend/src/locales /app/frontend/src/locales
