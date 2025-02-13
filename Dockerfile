@@ -8,20 +8,22 @@ RUN apk update && apk add --no-cache \
 # Copiar migraciones
 COPY backend/database/migrations /app/backend/database/migrations/
 
-# Copiar solo los componentes modificados del frontend
+# Copiar componentes del frontend
 COPY frontend/src/components/modals/CreateTicketModal /app/frontend/src/components/modals/CreateTicketModal
 COPY frontend/src/components/modals/CreateEventModal /app/frontend/src/components/modals/CreateEventModal
 COPY frontend/src/components/routes/organizer/OrganizerDashboard /app/frontend/src/components/routes/organizer/OrganizerDashboard
 COPY frontend/src/components/common/Editor /app/frontend/src/components/common/Editor
 COPY frontend/src/components/common/Modal /app/frontend/src/components/common/Modal
 COPY frontend/src/components/common/Card /app/frontend/src/components/common/Card
+COPY frontend/src/components/routes/event /app/frontend/src/components/routes/event
 
 # Copiar archivos de rutas, utilidades y dependencias
-COPY frontend/src/components/routes/event/tickets.tsx /app/frontend/src/components/routes/event/tickets.tsx
 COPY frontend/src/utils /app/frontend/src/utils
 COPY frontend/src/queries /app/frontend/src/queries
 COPY frontend/src/lib /app/frontend/src/lib
 COPY frontend/src/assets /app/frontend/src/assets
+COPY frontend/src/router.tsx /app/frontend/src/router.tsx
+COPY frontend/src/routes.tsx /app/frontend/src/routes.tsx
 
 # Copiar archivos de localización
 COPY frontend/src/locales /app/frontend/src/locales
