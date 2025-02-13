@@ -12,6 +12,9 @@ COPY backend/database/migrations /app/backend/database/migrations/
 COPY frontend/src/components/modals/CreateTicketModal /app/frontend/src/components/modals/CreateTicketModal
 COPY frontend/src/components/modals/CreateEventModal /app/frontend/src/components/modals/CreateEventModal
 COPY frontend/src/components/routes/organizer/OrganizerDashboard /app/frontend/src/components/routes/organizer/OrganizerDashboard
+COPY frontend/src/components/common/Editor /app/frontend/src/components/common/Editor
+COPY frontend/src/components/common/Modal /app/frontend/src/components/common/Modal
+COPY frontend/src/components/common/Card /app/frontend/src/components/common/Card
 
 # Copiar archivos de rutas, utilidades y dependencias
 COPY frontend/src/components/routes/event/tickets.tsx /app/frontend/src/components/routes/event/tickets.tsx
@@ -28,6 +31,7 @@ COPY frontend/lingui.config.ts /app/frontend/
 COPY frontend/package*.json /app/frontend/
 COPY frontend/tsconfig*.json /app/frontend/
 COPY frontend/vite.config.ts /app/frontend/
+COPY frontend/index.html /app/frontend/
 
 # Reconstruir solo los archivos modificados
 WORKDIR /app/frontend
