@@ -15,6 +15,7 @@ COPY frontend/src/components/routes/organizer/OrganizerDashboard /app/frontend/s
 
 COPY frontend/src/components/routes/event/tickets.tsx /app/frontend/src/components/routes/event/tickets.tsx
 COPY frontend/src/utils  /app/frontend/src/utils
+COPY frontend/src/queries  /app/frontend/src/queries
 
 # Copiar archivos de localización
 COPY frontend/src/locales /app/frontend/src/locales
