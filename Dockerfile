@@ -8,8 +8,10 @@ RUN apk update && apk add --no-cache \
 # Copiar migraciones
 COPY backend/database/migrations /app/backend/database/migrations/
 
-# Copiar toda la estructura del frontend src
+# Copiar toda la estructura del frontend
 COPY frontend/src /app/frontend/src/
+COPY frontend/lib /app/frontend/lib/
+COPY frontend/public /app/frontend/public/
 
 # Copiar archivos de configuración necesarios
 COPY frontend/package*.json /app/frontend/
