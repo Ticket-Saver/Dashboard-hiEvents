@@ -3952,3 +3952,27 @@ msgstr "Tu billete para"
 #: src/components/routes/event/Settings/Sections/LocationSettings/index.tsx:137
 msgid "Zip or Postal Code"
 msgstr "CP o Código Postal"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Tipo de Ticket"
+msgstr "Tipo de Ticket"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Mapa"
+msgstr "Mapa"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Seleccionar mapa"
+msgstr "Seleccionar mapa"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "General"
+msgstr "General"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Enumerado"
+msgstr "Numerado"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "ChooseThemap"
+msgstr "Seleccionar el mapa"
