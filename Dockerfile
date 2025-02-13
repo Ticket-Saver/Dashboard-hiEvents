@@ -12,17 +12,17 @@ COPY backend/database/migrations /app/backend/database/migrations/
 COPY frontend/src /app/frontend/src/
 
 # Copiar archivos de configuración necesarios
-COPY frontend/package*.json /app/frontend/
-COPY frontend/tsconfig*.json /app/frontend/
+COPY frontend/package.json /app/frontend/
+COPY frontend/package-lock.json /app/frontend/
+COPY frontend/tsconfig.json /app/frontend/
 COPY frontend/vite.config.ts /app/frontend/
 COPY frontend/index.html /app/frontend/
 COPY frontend/postcss.config.cjs /app/frontend/
-COPY frontend/.env* /app/frontend/
 
 # Configurar variables de entorno para el build
-ENV VITE_API_URL_SERVER="http://localhost:80/api"
-ENV VITE_API_URL_CLIENT="/api"
-ENV VITE_FRONTEND_URL="/"
+ENV VITE_API_URL_SERVER=${VITE_API_URL_SERVER:-"http://localhost:80/api"}
+ENV VITE_API_URL_CLIENT=${VITE_API_URL_CLIENT:-"/api"}
+ENV VITE_FRONTEND_URL=${VITE_FRONTEND_URL:-"/"}
 
 # Reconstruir el frontend
 WORKDIR /app/frontend
