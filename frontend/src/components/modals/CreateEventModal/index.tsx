@@ -156,8 +156,8 @@ export const CreateEventModal = ({onClose}: GenericModalProps) => {
                         label={t`Mapa`}
                         placeholder={t`Seleccionar mapa`}
                         data={[
-                            { value: 'map1', label: t`Mapa 1` },
-                            { value: 'map2', label: t`Mapa 2` },
+                            { value: 'map1', label: 'Mapa 1' },
+                            { value: 'map2', label: 'Mapa 2' },
                         ]}
                         mt={10}
                     />
