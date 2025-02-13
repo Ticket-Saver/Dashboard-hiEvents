@@ -11,6 +11,18 @@ COPY backend/database/migrations /app/backend/database/migrations/
 # Copiar todo el directorio src del frontend
 COPY frontend/src /app/frontend/src/
 
+# Copiar componentes comunes necesarios
+COPY frontend/src/components/common/PageTitle /app/frontend/src/components/common/PageTitle
+COPY frontend/src/components/common/PageBody /app/frontend/src/components/common/PageBody
+COPY frontend/src/components/common/TicketsTable /app/frontend/src/components/common/TicketsTable
+COPY frontend/src/components/common/SearchBar /app/frontend/src/components/common/SearchBar
+COPY frontend/src/components/common/ToolBar /app/frontend/src/components/common/ToolBar
+COPY frontend/src/components/common/TableSkeleton /app/frontend/src/components/common/TableSkeleton
+COPY frontend/src/components/common/Pagination /app/frontend/src/components/common/Pagination
+
+# Copiar archivos de mapas
+COPY frontend/src/assets/venue-maps /app/frontend/src/assets/venue-maps
+
 # Copiar archivos de configuración necesarios
 COPY frontend/package.json /app/frontend/
 COPY frontend/package-lock.json /app/frontend/
