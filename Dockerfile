@@ -17,11 +17,16 @@ COPY frontend/src/components/routes/organizer/OrganizerDashboard /app/frontend/s
 COPY frontend/src/components/routes/event/tickets.tsx /app/frontend/src/components/routes/event/tickets.tsx
 COPY frontend/src/utils /app/frontend/src/utils
 COPY frontend/src/queries /app/frontend/src/queries
-COPY frontend/lib /app/frontend/lib
+COPY frontend/src/lib /app/frontend/src/lib
 
 # Copiar archivos de localización
 COPY frontend/src/locales /app/frontend/src/locales
 COPY frontend/lingui.config.ts /app/frontend/
+
+# Copiar archivos de configuración necesarios
+COPY frontend/package*.json /app/frontend/
+COPY frontend/tsconfig*.json /app/frontend/
+COPY frontend/vite.config.ts /app/frontend/
 
 # Reconstruir solo los archivos modificados
 WORKDIR /app/frontend
