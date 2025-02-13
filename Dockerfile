@@ -1,13 +1,20 @@
 FROM daveearley/hi.events-all-in-one
 
-# Instalar Node.js usando apk (Alpine package manager)
+# Instalar Node.js y PHP dependencies
 RUN apk update && apk add --no-cache \
     nodejs \
-    npm
+    npm \
+    composer
 
 # Copiar todo el proyecto
 COPY backend /app/backend
 COPY frontend /app/frontend
+
+# Instalar dependencias del backend
+WORKDIR /app/backend
+RUN composer install --no-dev --optimize-autoloader
+RUN php artisan config:clear
+RUN php artisan cache:clear
 
 # Configurar variables de entorno para el build
 ENV VITE_API_URL_SERVER=${VITE_API_URL_SERVER:-"http://localhost:80/api"}
