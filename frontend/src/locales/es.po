@@ -4070,4 +4070,9 @@ msgid "Purple"
 msgstr "Morado"
 
 msgid "Pink"
-msgstr "Rosa"   
+msgstr "Rosa"
+
+# SearchBar placeholder
+msgid "Search by ticket name, section, seat number or position..."
+msgstr "Buscar por nombre de ticket, sección, número de asiento o posición..."
+    
