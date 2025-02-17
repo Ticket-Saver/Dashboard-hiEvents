@@ -3,9 +3,6 @@ import {setAuthToken} from "../utilites/apiClient.ts";
 import {isSsr} from "../utilites/helpers.ts";
 import {getConfig} from "../utilites/config.ts";
 
-const BASE_URL = isSsr()
-    ? getConfig('VITE_API_URL_SERVER')
-    : getConfig('VITE_API_URL_CLIENT');
 const LOGIN_PATH = "/auth/login";
 const PREVIOUS_URL_KEY = 'previous_url';
 
@@ -26,8 +23,19 @@ const ALLOWED_UNAUTHENTICATED_PATHS = [
     'check-in',
 ];
 
-export const api = axios.create({
-    baseURL: BASE_URL,
+const getBaseUrl = () => {
+    const serverUrl = import.meta.env.VITE_API_URL_SERVER;
+    
+    // Si estamos en producción y la URL es localhost, usar la URL del cliente
+    if (import.meta.env.PROD && serverUrl.includes('localhost')) {
+        return import.meta.env.VITE_API_URL_CLIENT;
+    }
+    
+    return serverUrl;
+};
+
+export const apiClient = axios.create({
+    baseURL: getBaseUrl(),
     headers: {
         'Content-Type': 'application/json'
     },
@@ -39,7 +47,7 @@ if (existingToken) {
     setAuthToken(existingToken);
 }
 
-api.interceptors.response.use(
+apiClient.interceptors.response.use(
     (response) => {
         const token = response?.data?.token || response?.headers["x-auth-token"];
         if (token) {
