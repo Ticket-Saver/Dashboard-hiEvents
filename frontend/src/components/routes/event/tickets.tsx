@@ -23,6 +23,9 @@ import map2Seats from '../../../assets/venue-maps/map2/seats.json';
 import { notifications } from "@mantine/notifications";
 import { useCreateTicket } from "../../../queries/useCreateTicket";
 import { useQueryClient } from "@tanstack/react-query";
+import { useQuery } from '@tanstack/react-query';
+import { api } from '../../../api/client';
+import { LoadingOverlay } from '@mantine/core';
 
 interface SearchParams {
     pageNumber: number;
@@ -36,10 +39,41 @@ export const Tickets = () => {
     const [searchParams, setSearchParams] = useFilterQueryParamSync();
     const [createModalOpen, {open: openCreateModal, close: closeCreateModal}] = useDisclosure(false);
     const {eventId} = useParams();
-    const {data: event} = useGetEvent(eventId);
-    const ticketsQuery = useGetTickets(eventId, searchParams as QueryFilters);
-    const pagination = ticketsQuery?.data?.meta;
-    const tickets = ticketsQuery?.data?.data;
+
+    // Consulta para obtener el evento
+    const eventQuery = useQuery({
+        queryKey: ['event', eventId],
+        queryFn: async () => {
+            const response = await api.get(`/events/${eventId}`);
+            return response.data;
+        }
+    });
+
+    // Consulta para obtener los tickets
+    const ticketsQuery = useQuery({
+        queryKey: ['tickets', eventId],
+        queryFn: async () => {
+            const response = await api.get(`/events/${eventId}/tickets`);
+            return response.data;
+        },
+        enabled: !!eventId
+    });
+
+    // Manejo de estados de carga y error
+    if (eventQuery.isLoading || ticketsQuery.isLoading) {
+        return <LoadingOverlay visible={true} />;
+    }
+
+    if (eventQuery.isError || ticketsQuery.isError) {
+        return (
+            <PageBody>
+                <div>{t`Error loading tickets. Please try again later.`}</div>
+            </PageBody>
+        );
+    }
+
+    const pagination = ticketsQuery.data?.meta;
+    const tickets = ticketsQuery.data?.data;
     const enableSorting =
         (Object.keys(searchParams).length === 0) ||
         (
@@ -66,11 +100,11 @@ export const Tickets = () => {
     useUrlHash('create-ticket', () => openCreateModal());
 
     const handleBulkCreate = async () => {
-        if (!event?.map || hasCreatedTickets) return;
+        if (!eventQuery.data?.map || hasCreatedTickets) return;
         
         try {
             setIsCreatingBulk(true);
-            const mapSeats = getMapSeats(event.map);
+            const mapSeats = getMapSeats(eventQuery.data.map);
             const seats = mapSeats.tickets;
             
             const chunk = (arr: any[], size: number) => {
@@ -199,7 +233,7 @@ export const Tickets = () => {
                 />
             )}>
                 <div className="flex gap-4">
-                    {event?.map && (
+                    {eventQuery.data?.map && (
                         <>
                             <Button 
                                 color={'blue'} 
@@ -238,14 +272,14 @@ export const Tickets = () => {
                 </div>
             </ToolBar>
 
-            <TableSkeleton isVisible={!tickets || ticketsQuery.isFetching || !event}/>
+            <TableSkeleton isVisible={!tickets || ticketsQuery.isFetching || !eventQuery.data}/>
 
-            {(tickets && event)
+            {(tickets && eventQuery.data)
                 && (<TicketsTable
                         openCreateModal={openCreateModal}
                         enableSorting={enableSorting}
                         tickets={tickets}
-                        event={event}
+                        event={eventQuery.data}
                     />
                 )}
 

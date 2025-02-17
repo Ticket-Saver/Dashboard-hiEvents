@@ -41,14 +41,20 @@ if (existingToken) {
 
 api.interceptors.response.use(
     (response) => {
-        const token = response?.data?.token || response?.headers["x-auth-token"];
-        if (token) {
-            window?.localStorage?.setItem('token', token);
-            setAuthToken(token);
+        // Verificar que la respuesta sea JSON
+        if (response.headers['content-type']?.includes('application/json')) {
+            const token = response?.data?.token || response?.headers["x-auth-token"];
+            if (token) {
+                window?.localStorage?.setItem('token', token);
+                setAuthToken(token);
+            }
+            return response;
         }
-        return response;
+        // Si no es JSON, rechazar la promesa
+        return Promise.reject(new Error('Invalid response format'));
     },
     (error) => {
+        console.error('API Error:', error);
         const { status } = error.response;
         const currentPath = window?.location.pathname;
         const isAllowedUnauthenticatedPath = ALLOWED_UNAUTHENTICATED_PATHS.some(path => currentPath.includes(path));

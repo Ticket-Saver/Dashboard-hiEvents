@@ -28,7 +28,7 @@ interface TicketCardProps {
     openCreateModal: () => void;
 }
 
-export const TicketsTable = ({tickets, event, openCreateModal, enableSorting = false}: TicketCardProps) => {
+export const TicketsTable = ({tickets = [], event, openCreateModal, enableSorting = false}: TicketCardProps) => {
     const {eventId} = useParams();
     const sortTicketsMutation = useSortTickets();
     const {items, setItems, handleDragEnd} = useDragItemsHandler({
@@ -58,6 +58,10 @@ export const TicketsTable = ({tickets, event, openCreateModal, enableSorting = f
     useEffect(() => {
         setItems(tickets.map((ticket) => Number(ticket.id)));
     }, [tickets]);
+
+    if (!event) {
+        return null;
+    }
 
     if (tickets.length === 0) {
         return <NoResultsSplash
