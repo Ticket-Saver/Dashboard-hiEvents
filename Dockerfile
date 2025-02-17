@@ -8,9 +8,9 @@ RUN apk update && apk add --no-cache \
 # Copiar archivos del backend
 COPY backend/database/migrations /app/backend/database/migrations/
 COPY backend/app/Models/Event.php /app/backend/app/Models/Event.php
-COPY backend/app/Models/Ticket.php /app/backend/app/Models/Ticket.php
-COPY backend/app/Http/Controllers/Api/EventController.php /app/backend/app/Http/Controllers/Api/EventController.php
-COPY backend/app/Http/Resources/EventResource.php /app/backend/app/Http/Resources/EventResource.php
+COPY backend/app/Events/Dispatcher.php /app/backend/app/Events/Dispatcher.php
+COPY backend/app/Events/EventUpdateEvent.php /app/backend/app/Events/EventUpdateEvent.php
+COPY backend/app/Events/OrderStatusChangedEvent.php /app/backend/app/Events/OrderStatusChangedEvent.php
 
 # Copiar todo el directorio src del frontend
 COPY frontend/src /app/frontend/src
