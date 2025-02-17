@@ -20,7 +20,7 @@ axios.interceptors.request.use((config) => {
 // Interceptor para logs
 axios.interceptors.request.use(
     (config) => {
-        console.log('Request URL:', config.baseURL + config.url);
+        console.log('Request URL--jorge:', config.baseURL + config.url);
         console.log('Request Params:', config.params);
         return config;
     },
