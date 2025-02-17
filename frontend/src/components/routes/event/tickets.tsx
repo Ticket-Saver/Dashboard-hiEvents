@@ -24,6 +24,14 @@ import { notifications } from "@mantine/notifications";
 import { useCreateTicket } from "../../../queries/useCreateTicket";
 import { useQueryClient } from "@tanstack/react-query";
 
+interface SearchParams {
+    pageNumber: number;
+    query?: string;
+    position?: string;
+    section?: string;
+    seat_number?: string;
+}
+
 export const Tickets = () => {
     const [searchParams, setSearchParams] = useFilterQueryParamSync();
     const [createModalOpen, {open: openCreateModal, close: closeCreateModal}] = useDisclosure(false);
@@ -155,7 +163,7 @@ export const Tickets = () => {
                 color: 'green'
             });
 
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error creating tickets:', error);
             notifications.show({
                 title: t`Error`,
