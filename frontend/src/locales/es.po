@@ -4240,4 +4240,77 @@ msgstr "Tickets ordenados exitosamente"
 
 msgid "An error occurred while sorting the tickets. Please try again or refresh the page"
 msgstr "Ocurrió un error al ordenar los tickets. Por favor, intenta de nuevo o actualiza la página"
+
+# Posición del asiento
+msgid "Posición"
+msgstr "Posición"
+
+msgid "Ej: Izquierda Centro, Derecha Arriba..."
+msgstr "Ej: Izquierda Centro, Derecha Arriba..."
+
+msgid "Posición del asiento en el mapa (ej: Izquierda Arriba, Centro)"
+msgstr "Posición del asiento en el mapa (ej: Izquierda Arriba, Centro)"
+
+# Número de asiento
+msgid "Número de Asiento"
+msgstr "Número de Asiento"
+
+msgid "Ej: A1, B2, C3..."
+msgstr "Ej: A1, B2, C3..."
+
+msgid "Identificador del asiento (puede incluir letras y números)"
+msgstr "Identificador del asiento (puede incluir letras y números)"
+
+# Secciones del mapa
+msgid "Anarajando"
+msgstr "Anaranjado"
+
+msgid "Verde"
+msgstr "Verde"
+
+msgid "Morado"
+msgstr "Morado"
+
+msgid "Amarillo"
+msgstr "Amarillo"
+
+msgid "Rojo"
+msgstr "Rojo"
+
+msgid "Fucsia"
+msgstr "Fucsia"
+
+msgid "Gris"
+msgstr "Gris"
+
+msgid "Azul"
+msgstr "Azul"
+
+msgid "Rosa"
+msgstr "Rosa"
+
+msgid "Blanco"
+msgstr "Blanco"
+
+msgid "Negro"
+msgstr "Negro"
+
+# Mensajes de error y éxito
+msgid "You cannot delete this price tier because there are already tickets sold for this tier. You can hide it instead."
+msgstr "No puedes eliminar este nivel de precio porque ya hay tickets vendidos para este nivel. Puedes ocultarlo en su lugar."
+
+msgid "You must have at least one price tier"
+msgstr "Debes tener al menos un nivel de precio"
+
+msgid "Early bird"
+msgstr "Preventa"
+
+msgid "Tier {index + 1}"
+msgstr "Nivel {index + 1}"
+
+msgid "Hiding a ticket will prevent users from seeing it on the event page."
+msgstr "Ocultar un ticket evitará que los usuarios lo vean en la página del evento."
+
+msgid "Hide this tier from users"
+msgstr "Ocultar este nivel a los usuarios"
     
