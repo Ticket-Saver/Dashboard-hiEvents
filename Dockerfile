@@ -8,6 +8,10 @@ RUN apk update && apk add --no-cache \
 # Copiar todo el backend
 COPY backend /app/backend
 
+# Instalar dependencias de PHP
+WORKDIR /app/backend
+RUN composer install --no-dev --optimize-autoloader
+
 # Copiar todo el frontend
 COPY frontend /app/frontend
 
