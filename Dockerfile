@@ -17,9 +17,11 @@ COPY frontend/src/components/common/Modal /app/frontend/src/components/common/Mo
 COPY frontend/src/components/common/Card /app/frontend/src/components/common/Card
 COPY frontend/src/assets/venue-maps /app/frontend/src/assets/venue-maps
 COPY frontend/src/locales /app/frontend/src/locales
-COPY frontend/src/utils/venueMaps.ts /app/frontend/src/utils/venueMaps.ts
-COPY frontend/src/queries/useGetTickets.ts /app/frontend/src/queries/useGetTickets.ts
-COPY frontend/src/queries/useGetEvent.ts /app/frontend/src/queries/useGetEvent.ts
+COPY frontend/src/utils /app/frontend/src/utils
+COPY frontend/src/queries /app/frontend/src/queries
+COPY frontend/src/mutations /app/frontend/src/mutations
+COPY frontend/src/hooks /app/frontend/src/hooks
+COPY frontend/src/types.ts /app/frontend/src/types.ts
 
 # Copiar archivos de configuración del frontend
 COPY frontend/package.json /app/frontend/
