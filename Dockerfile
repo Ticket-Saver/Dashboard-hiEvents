@@ -21,6 +21,8 @@ COPY frontend/src/utils /app/frontend/src/utils
 COPY frontend/src/queries /app/frontend/src/queries
 COPY frontend/src/mutations /app/frontend/src/mutations
 COPY frontend/src/hooks /app/frontend/src/hooks
+COPY frontend/src/lib /app/frontend/src/lib
+COPY frontend/src/utilites /app/frontend/src/utilites
 COPY frontend/src/types.ts /app/frontend/src/types.ts
 
 # Copiar archivos de configuración del frontend
