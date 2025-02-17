@@ -4075,4 +4075,14 @@ msgstr "Rosa"
 # SearchBar placeholder
 msgid "Search by ticket name, section, seat number or position..."
 msgstr "Buscar por nombre de ticket, sección, número de asiento o posición..."
+
+# Ticket search and filter messages
+msgid "No tickets found"
+msgstr "No se encontraron tickets"
+
+msgid "Filter tickets"
+msgstr "Filtrar tickets"
+
+msgid "Search tickets"
+msgstr "Buscar tickets"
     
