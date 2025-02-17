@@ -34,18 +34,13 @@ const getBaseUrl = () => {
     return serverUrl;
 };
 
-// Crear la instancia del cliente
-const apiClient = axios.create({
+export const apiClient = axios.create({
     baseURL: getBaseUrl(),
     headers: {
         'Content-Type': 'application/json'
     },
     withCredentials: true,
 });
-
-// Mantener la compatibilidad con el nombre anterior
-export const api = apiClient;
-export { apiClient };
 
 const existingToken = typeof window !== "undefined" ? window.localStorage.getItem('token') : undefined;
 if (existingToken) {
