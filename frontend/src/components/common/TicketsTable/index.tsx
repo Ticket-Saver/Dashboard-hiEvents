@@ -56,6 +56,8 @@ export const TicketsTable = ({tickets = [], event, openCreateModal, enableSortin
     );
 
     useEffect(() => {
+        console.log('Tickets:', tickets);
+        console.log('Event:', event);
         setItems(tickets.map((ticket) => Number(ticket.id)));
     }, [tickets]);
 
@@ -98,9 +100,10 @@ export const TicketsTable = ({tickets = [], event, openCreateModal, enableSortin
         >
             <SortableContext items={items as UniqueIdentifier[]} strategy={verticalListSortingStrategy}>
                 <div className={classes.cards}>
-                    cargando ticket 
+                  
                     {items.map((ticketId) => {
                         const ticket = tickets.find((t) => t.id === ticketId);
+                        console.log('Current Ticket:', ticket);
 
                         if (!ticket) {
                             return null;
