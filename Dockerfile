@@ -16,10 +16,18 @@ COPY frontend/src/utils/venueMaps.ts /app/frontend/src/utils/venueMaps.ts
 COPY frontend/src/queries/useGetTickets.ts /app/frontend/src/queries/useGetTickets.ts
 COPY frontend/src/queries/useGetEvent.ts /app/frontend/src/queries/useGetEvent.ts
 
+# Copiar archivos de configuración del frontend
+COPY frontend/package.json /app/frontend/
+COPY frontend/package-lock.json /app/frontend/
+COPY frontend/tsconfig.json /app/frontend/
+COPY frontend/vite.config.ts /app/frontend/
+COPY frontend/index.html /app/frontend/
+COPY frontend/lingui.config.ts /app/frontend/
+
 # Reconstruir el frontend
 WORKDIR /app/frontend
 RUN npm install
-RUN npm run build
+RUN npm run build å
 
 # Copiar el script de inicio
 WORKDIR /
