@@ -1,5 +1,10 @@
 FROM daveearley/hi.events-all-in-one
 
+# Instalar Node.js y npm
+RUN apk update && apk add --no-cache \
+    nodejs \
+    npm
+
 # Copiar archivos del backend
 COPY backend/database/migrations /app/backend/database/migrations/
 
@@ -27,7 +32,7 @@ COPY frontend/lingui.config.ts /app/frontend/
 # Reconstruir el frontend
 WORKDIR /app/frontend
 RUN npm install
-RUN npm run build å
+RUN npm run build
 
 # Copiar el script de inicio
 WORKDIR /
