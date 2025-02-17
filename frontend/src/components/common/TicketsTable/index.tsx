@@ -98,13 +98,14 @@ export const TicketsTable = ({tickets = [], event, openCreateModal, enableSortin
         >
             <SortableContext items={items as UniqueIdentifier[]} strategy={verticalListSortingStrategy}>
                 <div className={classes.cards}>
+                    cargando ticket 
                     {items.map((ticketId) => {
                         const ticket = tickets.find((t) => t.id === ticketId);
 
                         if (!ticket) {
                             return null;
                         }
-
+ 
                         return (
                             <SortableTicket
                                 key={ticketId}
