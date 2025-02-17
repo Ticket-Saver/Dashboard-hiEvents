@@ -1,0 +1,50 @@
+# SearchBar translations
+msgid "Position"
+msgstr "Posición"
+
+msgid "Section"
+msgstr "Sección"
+
+msgid "Seat Number"
+msgstr "Número de Asiento"
+
+msgid "Clear search"
+msgstr "Limpiar búsqueda"
+
+msgid "Clear filters"
+msgstr "Limpiar filtros"
+
+msgid "Clear Search Text"
+msgstr "Limpiar texto de búsqueda"
+
+# GettingStarted translations
+msgid "🎨 Crear desde plantilla"
+msgstr "🎨 Crear desde plantilla"
+
+msgid "Crear un evento desde una plantilla preestablecida."
+msgstr "Crear un evento desde una plantilla preestablecida."
+
+msgid "Crear desde plantilla"
+msgstr "Crear desde plantilla"
+
+# CreateTicketModal translations
+msgid "General"
+msgstr "General"
+
+msgid "VIP"
+msgstr "VIP"
+
+msgid "Early Bird"
+msgstr "Preventa"
+
+msgid "Create Ticket"
+msgstr "Crear Ticket"
+
+msgid "Working..."
+msgstr "Trabajando..."
+
+msgid "Successfully Created Ticket"
+msgstr "Ticket creado exitosamente"
+
+msgid "Unable to create ticket. Please check the your details"
+msgstr "No se pudo crear el ticket. Por favor revisa los detalles" 
