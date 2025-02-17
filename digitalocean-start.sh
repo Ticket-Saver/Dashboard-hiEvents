@@ -6,10 +6,8 @@ export VITE_FRONTEND_URL=${APP_FRONTEND_URL:-"/"}
 echo "Starting with the following environment variables:"
 echo "VITE_FRONTEND_URL=${VITE_FRONTEND_URL}"
 
-# Cambiar al directorio backend
-cd /app/backend
-
 # Ejecutar migraciones
+cd /app/backend
 php artisan migrate --force
 
 # Limpiar cachés
@@ -23,5 +21,6 @@ php artisan storage:link
 chown -R www-data:www-data /app/backend
 chmod -R 775 /app/backend/storage /app/backend/bootstrap/cache
 
-# Ejecutar el script de inicio original
-exec /startup.sh
+# Continuar con el inicio normal
+cd /
+exec supervisord -n

@@ -24,10 +24,6 @@ WORKDIR /app/frontend
 RUN npm install
 RUN npm run build
 
-# Ejecutar migraciones del backend
-WORKDIR /app/backend
-RUN php artisan migrate
-
 # Copiar el script de inicio
 WORKDIR /
 COPY digitalocean-start.sh /digitalocean-start.sh
