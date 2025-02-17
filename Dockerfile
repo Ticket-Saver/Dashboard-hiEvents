@@ -4,7 +4,25 @@ FROM daveearley/hi.events-all-in-one
 RUN apk update && apk add --no-cache \
     nodejs \
     npm \
-    composer
+    composer \
+    php82-intl \
+    php82-simplexml \
+    php82-session \
+    php82-sodium \
+    php82-fileinfo \
+    php82-tokenizer \
+    php82-dom \
+    php82-xml \
+    php82-xmlwriter \
+    php82-xmlreader \
+    php82-pdo \
+    php82-pdo_mysql \
+    php82-pdo_sqlite \
+    php82-mbstring \
+    php82-openssl \
+    php82-json \
+    php82-curl \
+    php82-zip
 
 # Copiar todo el proyecto
 COPY backend /app/backend
