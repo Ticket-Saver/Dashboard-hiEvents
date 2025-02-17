@@ -16,7 +16,13 @@ COPY frontend/src/utils/venueMaps.ts /app/frontend/src/utils/venueMaps.ts
 COPY frontend/src/queries/useGetTickets.ts /app/frontend/src/queries/useGetTickets.ts
 COPY frontend/src/queries/useGetEvent.ts /app/frontend/src/queries/useGetEvent.ts
 
+# Reconstruir el frontend
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
+
 # Copiar el script de inicio
+WORKDIR /
 COPY digitalocean-start.sh /digitalocean-start.sh
 RUN chmod +x /digitalocean-start.sh
 
