@@ -3976,3 +3976,98 @@ msgstr "Numerado"
 #: src/components/modals/CreateEventModal/index.tsx
 msgid "ChooseThemap"
 msgstr "Seleccionar el mapa"
+
+# SearchBar translations
+msgid "Position"
+msgstr "Posición"
+
+msgid "Section"
+msgstr "Sección"
+
+msgid "Seat Number"
+msgstr "Número de Asiento"
+
+msgid "Clear search"
+msgstr "Limpiar búsqueda"
+
+msgid "Clear filters"
+msgstr "Limpiar filtros"
+
+msgid "Clear Search Text"
+msgstr "Limpiar texto de búsqueda"
+
+# GettingStarted translations
+msgid "🎨 Create from template"
+msgstr "🎨 Crear desde plantilla"
+
+msgid "Create an event from a pre-established template."
+msgstr "Crear un evento desde una plantilla preestablecida."
+
+msgid "Create from template"
+msgstr "Crear desde plantilla"
+
+# CreateTicketModal translations
+msgid "General"
+msgstr "General"
+
+msgid "VIP"
+msgstr "VIP"
+
+msgid "Early Bird"
+msgstr "Preventa"
+
+msgid "Create Ticket"
+msgstr "Crear Ticket"
+
+msgid "Working..."
+msgstr "Trabajando..."
+
+msgid "Successfully Created Ticket"
+msgstr "Ticket creado exitosamente"
+
+msgid "Unable to create ticket. Please check your details"
+msgstr "No se pudo crear el ticket. Por favor revisa los detalles"
+
+# Position options
+msgid "Left"
+msgstr "Izquierda"
+
+msgid "Center-Left"
+msgstr "Centro-Izquierda"
+
+msgid "Center"
+msgstr "Centro"
+
+msgid "Center-Right"
+msgstr "Centro-Derecha"
+
+msgid "Right"
+msgstr "Derecha"
+
+# Section options
+msgid "Orange"
+msgstr "Anaranjado"
+
+msgid "Yellow"
+msgstr "Amarillo"
+
+msgid "Green"
+msgstr "Verde"
+
+msgid "Gray"
+msgstr "Gris"
+
+msgid "Red"
+msgstr "Rojo"
+
+msgid "Blue"
+msgstr "Azul"
+
+msgid "Fuchsia"
+msgstr "Fucsia"
+
+msgid "Purple"
+msgstr "Morado"
+
+msgid "Pink"
+msgstr "Rosa"   
