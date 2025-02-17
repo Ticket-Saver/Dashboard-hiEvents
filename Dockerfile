@@ -17,6 +17,13 @@ COPY backend/app/Models/CheckInList.php /app/backend/app/Models/CheckInList.php
 COPY backend/app/Models/CapacityAssignment.php /app/backend/app/Models/CapacityAssignment.php
 COPY backend/app/Models/Organizer.php /app/backend/app/Models/Organizer.php
 
+# Copiar controladores y repositorios
+COPY backend/app/Http/Controllers/Api/EventController.php /app/backend/app/Http/Controllers/Api/EventController.php
+COPY backend/app/Repository/Eloquent/EventRepository.php /app/backend/app/Repository/Eloquent/EventRepository.php
+COPY backend/app/Repository/Eloquent/BaseRepository.php /app/backend/app/Repository/Eloquent/BaseRepository.php
+COPY backend/app/Services/Handlers/Event/GetEventsHandler.php /app/backend/app/Services/Handlers/Event/GetEventsHandler.php
+COPY backend/app/Http/Actions/Events/GetEventsAction.php /app/backend/app/Http/Actions/Events/GetEventsAction.php
+
 COPY backend/app/Events/Dispatcher.php /app/backend/app/Events/Dispatcher.php
 COPY backend/app/Events/EventUpdateEvent.php /app/backend/app/Events/EventUpdateEvent.php
 COPY backend/app/Events/OrderStatusChangedEvent.php /app/backend/app/Events/OrderStatusChangedEvent.php
