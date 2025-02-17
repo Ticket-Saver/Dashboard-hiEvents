@@ -78,6 +78,16 @@ export const CreateTicketModal = ({onClose}: GenericModalProps) => {
             }) || []);
     }, [taxesAndFeesLoaded]);
 
+    const ticketOptions = [
+        { value: 'general', label: t`General` },
+        { value: 'vip', label: t`VIP` },
+        { value: 'early_bird', label: t`Early Bird` },
+        // ... otras opciones
+    ].map(option => ({
+        ...option,
+        label: t`${option.label}`  // Aseguramos que todas las opciones estén traducidas
+    }));
+
     return (
         <Modal
             onClose={onClose}

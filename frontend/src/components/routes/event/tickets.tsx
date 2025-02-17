@@ -203,7 +203,7 @@ export const Tickets = () => {
                                 title={hasCreatedTickets ? t`Tickets already created` : t`Create from template`}
                             >
                                 {hasCreatedTickets ? t`Tickets Created` : t`Create from template`}
-                            </Button>
+                            </Button>  
                             {hasCreatedTickets && (
                                 <Button
                                     color={'yellow'}
