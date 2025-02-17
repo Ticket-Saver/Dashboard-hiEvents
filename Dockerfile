@@ -8,6 +8,15 @@ RUN apk update && apk add --no-cache \
 # Copiar archivos del backend
 COPY backend/database/migrations /app/backend/database/migrations/
 COPY backend/app/Models/Event.php /app/backend/app/Models/Event.php
+COPY backend/app/Models/Ticket.php /app/backend/app/Models/Ticket.php
+COPY backend/app/Models/Attendee.php /app/backend/app/Models/Attendee.php
+COPY backend/app/Models/Question.php /app/backend/app/Models/Question.php
+COPY backend/app/Models/EventSetting.php /app/backend/app/Models/EventSetting.php
+COPY backend/app/Models/PromoCode.php /app/backend/app/Models/PromoCode.php
+COPY backend/app/Models/CheckInList.php /app/backend/app/Models/CheckInList.php
+COPY backend/app/Models/CapacityAssignment.php /app/backend/app/Models/CapacityAssignment.php
+COPY backend/app/Models/Organizer.php /app/backend/app/Models/Organizer.php
+
 COPY backend/app/Events/Dispatcher.php /app/backend/app/Events/Dispatcher.php
 COPY backend/app/Events/EventUpdateEvent.php /app/backend/app/Events/EventUpdateEvent.php
 COPY backend/app/Events/OrderStatusChangedEvent.php /app/backend/app/Events/OrderStatusChangedEvent.php
