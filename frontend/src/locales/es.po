@@ -4313,4 +4313,76 @@ msgstr "Ocultar un ticket evitará que los usuarios lo vean en la página del ev
 
 msgid "Hide this tier from users"
 msgstr "Ocultar este nivel a los usuarios"
+
+msgid "Add all from section"
+msgstr "Agregar todos de esta sección"
+
+msgid "Select tickets"
+msgstr "Seleccionar tickets"
+
+msgid "Select tickets for {position}"
+msgstr "Seleccionar tickets para {position}"
+
+msgid "Position"
+msgstr "Posición"
+
+msgid "Section"
+msgstr "Sección"
+
+msgid "Seat Number"
+msgstr "Número de Asiento"
+
+msgid "Clear filters"
+msgstr "Limpiar filtros"
+
+msgid "Clear search"
+msgstr "Limpiar búsqueda"
+
+msgid "Search by ticket name, section, seat number or position..."
+msgstr "Buscar por nombre de ticket, sección, número de asiento o posición..."
+
+msgid "Enter price"
+msgstr "Ingrese precio"
+
+msgid "Update prices"
+msgstr "Actualizar precios"
+
+msgid "Price updated successfully"
+msgstr "Precio actualizado exitosamente"
+
+msgid "Failed to update price"
+msgstr "Error al actualizar el precio"
+
+msgid "Select all"
+msgstr "Seleccionar todos"
+
+msgid "Using filtered selection"
+msgstr "Usando selección filtrada"
+
+msgid "Show all tickets"
+msgstr "Mostrar todos los tickets"
+
+msgid "Select position"
+msgstr "Seleccionar posición"
+
+msgid "Choose a position first"
+msgstr "Elija una posición primero"
+
+msgid "Select section for {position}"
+msgstr "Seleccionar sección para {position}"
+
+msgid "Choose a section"
+msgstr "Elija una sección"
+
+msgid "Select tickets for {position} - {section}"
+msgstr "Seleccionar tickets para {position} - {section}"
+
+msgid "No Position"
+msgstr "Sin Posición"
+
+msgid "No Section"
+msgstr "Sin Sección"
+
+msgid "No Seat"
+msgstr "Sin Asiento"
     
