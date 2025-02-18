@@ -107,6 +107,7 @@ use HiEvents\Http\Actions\Users\ResendInvitationAction;
 use HiEvents\Http\Actions\Users\UpdateMeAction;
 use HiEvents\Http\Actions\Users\UpdateUserAction;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 
 /** @var Router|Router $router */
 $router = app()->get('router');
@@ -275,5 +276,12 @@ $router->prefix('/public')->group(
         $router->delete('/check-in-lists/{check_in_list_short_id}/check-ins/{check_in_short_id}', DeleteAttendeeCheckInPublicAction::class);
     }
 );
+
+Route::middleware(['auth:sanctum'])
+    ->group(function () {
+        // Aumentar el límite para la ruta de tickets
+        Route::get('/events/{eventId}/tickets', GetTicketsAction::class)
+            ->middleware('throttle:60,1'); // 60 requests por minuto
+    });
 
 include_once __DIR__ . '/mail.php';

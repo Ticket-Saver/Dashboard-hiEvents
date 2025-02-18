@@ -97,5 +97,7 @@ class RepositoryServiceProvider extends ServiceProvider
         foreach (self::$interfaceToConcreteMap as $interface => $concrete) {
             $this->app->bind($interface, $concrete);
         }
+
+        $this->app->bind(TicketRepositoryInterface::class, TicketRepository::class);
     }
 }

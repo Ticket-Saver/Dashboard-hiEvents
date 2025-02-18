@@ -11,7 +11,7 @@ use HiEvents\Http\DTO\QueryParamsDTO;
 use HiEvents\Models\BaseModel;
 use HiEvents\Repository\Eloquent\Value\Relationship;
 use HiEvents\Repository\Interfaces\RepositoryInterface;
-use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Contracts\Pagination\Paginator; 
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

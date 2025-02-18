@@ -107,4 +107,11 @@ return [
 
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
 
+    'throttle' => [
+        'default' => [
+            'max_attempts' => 60,    // Número de intentos permitidos
+            'decay_minutes' => 1,    // Período de tiempo en minutos
+        ],
+    ],
+
 ];

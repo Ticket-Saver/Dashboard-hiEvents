@@ -134,6 +134,12 @@ export const SortableTicket = ({ticket, enableSorting, currencyCode}: {ticket: T
                                 </Popover>
                             )}
                             </div>
+                            <div className={classes.position}>
+                                <div className={classes.heading}>{t`Position`}</div>
+                                <div>
+                                    {ticket.position || t`No position`}
+                                </div>
+                            </div>
                             <div className={classes.description}>
                                 <div className={classes.heading}>{t`Status`}</div>
                                 <Popover>

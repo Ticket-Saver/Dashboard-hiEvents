@@ -18,15 +18,20 @@ class GetTicketsHandler
     {
     }
 
-    public function handle(int $eventId, QueryParamsDTO $queryParamsDTO): LengthAwarePaginator
+    public function handle(int $eventId, QueryParamsDTO $params): LengthAwarePaginator
     {
+        \Log::info('GetTicketsHandler::handle - Starting', [
+            'eventId' => $eventId,
+            'filter_fields' => $params->filter_fields
+        ]);
+
         $ticketPaginator = $this->ticketRepository
             ->loadRelation(TicketPriceDomainObject::class)
             ->loadRelation(TaxAndFeesDomainObject::class)
-            ->findByEventId($eventId, $queryParamsDTO);
+            ->findByEventId($eventId, $params);
 
         $filteredTickets = $this->ticketFilterService->filter(
-            tickets: $ticketPaginator->getCollection(),
+            tickets: collect($ticketPaginator->items()),
             hideSoldOutTickets: false,
         );
 
