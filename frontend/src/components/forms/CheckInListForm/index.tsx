@@ -90,6 +90,19 @@ export const CheckInListForm = ({form, tickets}: CheckInListFormProps) => {
         seat_number: ticket.seat_number
     })));
 
+    // Función para seleccionar todos los tickets de una posición
+    const handleSelectAllFromPosition = () => {
+        const ticketsToAdd = tickets
+            ?.filter(ticket => 
+                (ticket.position || t`No Position`) === selectedPosition
+            )
+            .map(ticket => String(ticket.id)) || [];
+
+        const currentSelected = form.values.ticket_ids || [];
+        const newSelection = [...new Set([...currentSelected, ...ticketsToAdd])];
+        form.setFieldValue('ticket_ids', newSelection);
+    };
+
     // Función para seleccionar todos los tickets filtrados
     const handleSelectAllFiltered = () => {
         const ticketsToAdd = tickets
@@ -156,6 +169,28 @@ export const CheckInListForm = ({form, tickets}: CheckInListFormProps) => {
                 </>
             )}
 
+            {!showAllTickets && selectedPosition && (
+                <Group position="apart" mb="sm">
+                    <Button
+                        onClick={handleSelectAllFromPosition}
+                        variant="light"
+                        color="blue"
+                    >
+                        {t`Add all from position ${selectedPosition}`}
+                    </Button>
+                    
+                    {selectedSection && (
+                        <Button
+                            onClick={handleSelectAllFiltered}
+                            variant="light"
+                            color="blue"
+                        >
+                            {t`Add all from section ${selectedSection}`}
+                        </Button>
+                    )}
+                </Group>
+            )}
+
             {/* MultiSelect de Tickets */}
             {(showAllTickets || (selectedPosition && selectedSection)) && (
                 <>
@@ -174,16 +209,6 @@ export const CheckInListForm = ({form, tickets}: CheckInListFormProps) => {
                             {...form.getInputProps('ticket_ids')}
                             style={{ flex: 1 }}
                         />
-                        {!showAllTickets && (
-                            <Button
-                                onClick={handleSelectAllFiltered}
-                                variant="light"
-                                color="blue"
-                                style={{ marginTop: 'auto' }}
-                            >
-                                {t`Add all from section`}
-                            </Button>
-                        )}
                     </Group>
                 </>
             )}

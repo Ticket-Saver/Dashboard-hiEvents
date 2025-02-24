@@ -4385,4 +4385,10 @@ msgstr "Sin Sección"
 
 msgid "No Seat"
 msgstr "Sin Asiento"
+
+msgid "Add all from position {position}"
+msgstr "Agregar todos de la posición {position}"
+
+msgid "Add all from section {section}"
+msgstr "Agregar todos de la sección {section}"
     
