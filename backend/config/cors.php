@@ -15,19 +15,26 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['*', 'api/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => array_filter(explode(',', env('CORS_ALLOWED_ORIGINS', '*'))),
+    'allowed_origins' => ['*'],  // Temporalmente permitimos todos los orígenes para pruebas
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => [
+        'Content-Type',
+        'X-Auth-Token',
+        'Origin',
+        'Authorization',
+        'Accept',
+        'X-Requested-With'
+    ],
 
     'exposed_headers' => ['X-Auth-Token'],
 
-    'max_age' => 0,
+    'max_age' => 86400,  // 24 horas
 
     'supports_credentials' => true,
 
