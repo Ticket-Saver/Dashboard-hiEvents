@@ -27,7 +27,7 @@ use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use App\Http\Middleware\Cors;
+use HiEvents\Http\Middleware\Cors;
 
 class Kernel extends HttpKernel
 {
@@ -46,7 +46,7 @@ class Kernel extends HttpKernel
         ValidatePostSize::class,
         TrimStrings::class,
         ConvertEmptyStringsToNull::class,
-        \App\Http\Middleware\Cors::class,
+        Cors::class,
     ];
 
     /**
