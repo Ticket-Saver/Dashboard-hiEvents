@@ -16,7 +16,7 @@ echo "STRIPE_SECRET=${STRIPE_SECRET}"
 # Ir al directorio del backend
 cd /app/backend
 
-echo "Limpiando cachés antes de migraciones..."
+echo "Limpiando cachés..."
 php artisan cache:clear
 php artisan config:clear
 php artisan route:clear
@@ -24,19 +24,7 @@ php artisan view:clear
 
 echo "Ejecutando migraciones..."
 # Intentar ejecutar las migraciones, pero continuar si hay errores
-php artisan migrate --force || {
-    echo "Advertencia: Hubo errores en las migraciones. Intentando continuar..."
-    
-    # Verificar si la tabla order_items existe
-    echo "Verificando estructura de la base de datos..."
-    php artisan db:show || true
-}
-
-echo "Limpiando cachés después de migraciones..."
-php artisan cache:clear
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
+php artisan migrate --force || echo "Advertencia: Hubo errores en las migraciones. Intentando continuar..."
 
 echo "Creando enlace simbólico para almacenamiento..."
 php artisan storage:link || true
