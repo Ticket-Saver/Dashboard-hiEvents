@@ -22,11 +22,11 @@ php artisan route:clear
 php artisan view:clear
 
 echo "Creando enlace simbólico para almacenamiento..."
-php artisan storage:link
+php artisan storage:link || true
 
 echo "Ajustando permisos..."
-chown -R www-data:www-data /app/backend/storage /app/backend/bootstrap/cache
-chmod -R 775 /app/backend/storage /app/backend/bootstrap/cache
+chown -R www-data:www-data /app/backend/storage /app/backend/bootstrap/cache || true
+chmod -R 775 /app/backend/storage /app/backend/bootstrap/cache || true
 
 echo "Configuración completada. Iniciando servidor..."
 

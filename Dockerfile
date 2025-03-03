@@ -1,21 +1,43 @@
 FROM daveearley/hi.events-all-in-one
 
-# Instalar Node.js, npm y dependencias de PHP
-RUN apk update && apk add --no-cache \
-    nodejs \
-    npm \
-    php-gd \
-    php-zip \
-    php-xml \
-    php-mbstring \
-    php-pdo \
-    php-pdo_mysql \
-    php-tokenizer \
-    php-fileinfo \
-    php-intl \
-    php-redis \
-    php-sodium \
-    php-pcntl
+# Verificar la versión de PHP y el sistema operativo
+RUN php -v && cat /etc/os-release
+
+# Intentar instalar las dependencias necesarias (para Alpine Linux)
+RUN if command -v apk >/dev/null 2>&1; then \
+        apk update && apk add --no-cache \
+        nodejs \
+        npm \
+        php-gd \
+        php-zip \
+        php-xml \
+        php-mbstring \
+        php-pdo \
+        php-pdo_mysql \
+        php-tokenizer \
+        php-fileinfo \
+        php-intl \
+        php-redis \
+        php-sodium \
+        php-pcntl; \
+    # Para Debian/Ubuntu
+    elif command -v apt-get >/dev/null 2>&1; then \
+        apt-get update && apt-get install -y \
+        nodejs \
+        npm \
+        php-gd \
+        php-zip \
+        php-xml \
+        php-mbstring \
+        php-pdo \
+        php-mysql \
+        php-intl \
+        php-redis \
+        php-sodium \
+        php-pcntl \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*; \
+    fi
 
 # Copiar todo el proyecto
 COPY . /app
@@ -23,7 +45,7 @@ WORKDIR /app
 
 # Instalar dependencias de PHP en el backend
 WORKDIR /app/backend
-RUN composer install --no-dev
+RUN composer install --no-dev --ignore-platform-reqs
 RUN php artisan config:clear
 RUN php artisan cache:clear
 
