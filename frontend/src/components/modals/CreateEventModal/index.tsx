@@ -144,8 +144,8 @@ export const CreateEventModal = ({onClose}: GenericModalProps) => {
                     label={t`Tipo de Ticket`}
                     required
                     data={[
-                        { value: 'general', label: 'General' },
-                        { value: 'enumerado', label: 'Enumerado' },
+                        { value: 'general', label: t`General` },
+                        { value: 'enumerado', label: t`Enumerado` },
                     ]}
                     mt={20}
                 />

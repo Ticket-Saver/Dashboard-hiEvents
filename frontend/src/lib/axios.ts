@@ -1,7 +1,18 @@
 import Axios from 'axios';
+import { getConfig } from '../utilites/config';
+import { isSsr } from '../utilites/helpers';
+
+const getBaseUrl = () => {
+    const baseUrl = isSsr()
+        ? getConfig('VITE_API_URL_SERVER')
+        : getConfig('VITE_API_URL_CLIENT');
+    
+    console.log('Base URL:', baseUrl); // Para debugging
+    return baseUrl;
+};
 
 export const axios = Axios.create({
-    baseURL: import.meta.env.VITE_API_URL_CLIENT,
+    baseURL: getBaseUrl(),
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -17,11 +28,17 @@ axios.interceptors.request.use((config) => {
     return config;
 });
 
-// Interceptor para logs
+// Interceptor para logs con más información
 axios.interceptors.request.use(
     (config) => {
-        console.log('Request URL:', config.baseURL + config.url);
-        console.log('Request Params:', config.params);
+        const fullUrl = `${config.baseURL || ''}${config.url || ''}`;
+        console.log('Request Details:', {
+            baseURL: config.baseURL,
+            url: config.url,
+            fullUrl: fullUrl,
+            params: config.params,
+            method: config.method
+        });
         return config;
     },
     (error) => {

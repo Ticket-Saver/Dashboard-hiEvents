@@ -10,7 +10,9 @@ RUN echo "user = www-data" >> /usr/local/etc/php-fpm.d/docker-php-serversideup-p
 
 RUN install-php-extensions intl
 
-COPY --chown=www-data:www-data . .
+COPY --chown=www-data:www-data database /app/backend/database
+COPY --chown=www-data:www-data . /app/backend
+WORKDIR /app/backend
 
 RUN chmod -R 755 storage  \
     && mkdir -p bootstrap/cache \

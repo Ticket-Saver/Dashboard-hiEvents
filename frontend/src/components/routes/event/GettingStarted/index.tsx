@@ -141,6 +141,20 @@ const GettingStarted = () => {
                             </Button>)}
                         {account?.is_account_email_confirmed && <Check/>}
                     </Card>
+                    <Card>
+                        <h2>
+                            {t`🎨 Crear desde plantilla`}
+                        </h2>
+                        <p>
+                            {t`Crear un evento desde una plantilla preestablecida.`}
+                        </p>
+                        <Button 
+                            onClick={handleCreateFromTemplate}
+                            className={classes.templateButton}
+                        >
+                            {t`Crear desde plantilla`}
+                        </Button>
+                    </Card>
                 </div>
             </PageBody>
         </>

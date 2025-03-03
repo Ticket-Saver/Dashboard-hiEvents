@@ -4633,3 +4633,27 @@ msgstr "Zip or Postal Code"
 #: src/components/routes/event/Settings/Sections/LocationSettings/index.tsx:92
 #~ msgid "Zoom link, Google Meet link, etc."
 #~ msgstr "Zoom link, Google Meet link, etc."
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Tipo de Ticket"
+msgstr "Ticket Type"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Mapa"
+msgstr "Map"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Seleccionar mapa"
+msgstr "Select map"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "General"
+msgstr "General"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Enumerado"
+msgstr "Numbered"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "ChooseThemap"
+msgstr "Choose the map"

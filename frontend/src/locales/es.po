@@ -3952,3 +3952,443 @@ msgstr "Tu billete para"
 #: src/components/routes/event/Settings/Sections/LocationSettings/index.tsx:137
 msgid "Zip or Postal Code"
 msgstr "CP o Código Postal"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Tipo de Ticket"
+msgstr "Tipo de Ticket"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Mapa"
+msgstr "Mapa"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Seleccionar mapa"
+msgstr "Seleccionar mapa"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "General"
+msgstr "General"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "Enumerado"
+msgstr "Numerado"
+
+#: src/components/modals/CreateEventModal/index.tsx
+msgid "ChooseThemap"
+msgstr "Seleccionar el mapa"
+
+# SearchBar translations
+msgid "Position"
+msgstr "Posición"
+
+msgid "Section"
+msgstr "Sección"
+
+msgid "Seat Number"
+msgstr "Número de Asiento"
+
+msgid "Clear search"
+msgstr "Limpiar búsqueda"
+
+msgid "Clear filters"
+msgstr "Limpiar filtros"
+
+msgid "Clear Search Text"
+msgstr "Limpiar texto de búsqueda"
+
+# GettingStarted translations
+msgid "🎨 Create from template"
+msgstr "🎨 Crear desde plantilla"
+
+msgid "Create an event from a pre-established template."
+msgstr "Crear un evento desde una plantilla preestablecida."
+
+msgid "Create from template"
+msgstr "Crear desde plantilla"
+
+# CreateTicketModal translations
+msgid "General"
+msgstr "General"
+
+msgid "VIP"
+msgstr "VIP"
+
+msgid "Early Bird"
+msgstr "Preventa"
+
+msgid "Create Ticket"
+msgstr "Crear Ticket"
+
+msgid "Working..."
+msgstr "Trabajando..."
+
+msgid "Successfully Created Ticket"
+msgstr "Ticket creado exitosamente"
+
+msgid "Unable to create ticket. Please check your details"
+msgstr "No se pudo crear el ticket. Por favor revisa los detalles"
+
+# Position options
+msgid "Left"
+msgstr "Izquierda"
+
+msgid "Center-Left"
+msgstr "Centro-Izquierda"
+
+msgid "Center"
+msgstr "Centro"
+
+msgid "Center-Right"
+msgstr "Centro-Derecha"
+
+msgid "Right"
+msgstr "Derecha"
+
+# Section options
+msgid "Orange"
+msgstr "Anaranjado"
+
+msgid "Yellow"
+msgstr "Amarillo"
+
+msgid "Green"
+msgstr "Verde"
+
+msgid "Gray"
+msgstr "Gris"
+
+msgid "Red"
+msgstr "Rojo"
+
+msgid "Blue"
+msgstr "Azul"
+
+msgid "Fuchsia"
+msgstr "Fucsia"
+
+msgid "Purple"
+msgstr "Morado"
+
+msgid "Pink"
+msgstr "Rosa"
+
+# SearchBar placeholder
+msgid "Search by ticket name, section, seat number or position..."
+msgstr "Buscar por nombre de ticket, sección, número de asiento o posición..."
+
+# Ticket search and filter messages
+msgid "No tickets found"
+msgstr "No se encontraron tickets"
+
+msgid "Filter tickets"
+msgstr "Filtrar tickets"
+
+msgid "Search tickets"
+msgstr "Buscar tickets"
+
+# Ticket Types
+msgid "Paid Ticket"
+msgstr "Ticket Pagado"
+
+msgid "Standard ticket with a fixed price"
+msgstr "Ticket estándar con precio fijo"
+
+msgid "Free Ticket"
+msgstr "Ticket Gratuito"
+
+msgid "Free ticket, no payment information required"
+msgstr "Ticket gratuito, no requiere información de pago"
+
+msgid "Donation / Pay what you'd like ticket"
+msgstr "Donación / Paga lo que quieras"
+
+msgid "Set a minimum price and let users pay more if they choose"
+msgstr "Establece un precio mínimo y permite que los usuarios paguen más si lo desean"
+
+msgid "Tiered Ticket"
+msgstr "Ticket por Niveles"
+
+msgid "Multiple price options. Perfect for early bird tickets etc."
+msgstr "Múltiples opciones de precio. Perfecto para tickets anticipados, etc."
+
+# Form Fields
+msgid "Ticket Type"
+msgstr "Tipo de Ticket"
+
+msgid "What are Tiered Tickets?"
+msgstr "¿Qué son los Tickets por Niveles?"
+
+msgid "Tiered tickets allow you to offer multiple price options for the same ticket. This is perfect for early bird tickets, or offering different price options for different groups of people."
+msgstr "Los tickets por niveles te permiten ofrecer múltiples opciones de precio para el mismo ticket. Es perfecto para tickets anticipados o para ofrecer diferentes precios a diferentes grupos de personas."
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "VIP Ticket"
+msgstr "Ticket VIP"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Minimum Price"
+msgstr "Precio Mínimo"
+
+msgid "Price"
+msgstr "Precio"
+
+msgid "Quantity Available"
+msgstr "Cantidad Disponible"
+
+msgid "Unlimited"
+msgstr "Ilimitado"
+
+# Seat Information
+msgid "Seat Information"
+msgstr "Información del Asiento"
+
+msgid "Position"
+msgstr "Posición"
+
+msgid "Ej: Izquierda Centro, Derecha Arriba..."
+msgstr "Ej: Izquierda Centro, Derecha Arriba..."
+
+msgid "Seat position on the map (e.g: Left Up, Center)"
+msgstr "Posición del asiento en el mapa (ej: Izquierda Arriba, Centro)"
+
+msgid "Seat Number"
+msgstr "Número de Asiento"
+
+msgid "Ej: A1, B2, C3..."
+msgstr "Ej: A1, B2, C3..."
+
+msgid "Seat identifier (can include letters and numbers)"
+msgstr "Identificador del asiento (puede incluir letras y números)"
+
+msgid "Section"
+msgstr "Sección"
+
+msgid "Select a section"
+msgstr "Selecciona una sección"
+
+msgid "No section found"
+msgstr "No se encontró la sección"
+
+# Additional Options
+msgid "Additional Options"
+msgstr "Opciones Adicionales"
+
+msgid "Show"
+msgstr "Mostrar"
+
+msgid "Hide"
+msgstr "Ocultar"
+
+msgid "Taxes and Fees"
+msgstr "Impuestos y Tarifas"
+
+msgid "Select..."
+msgstr "Seleccionar..."
+
+msgid "Minimum Per Order"
+msgstr "Mínimo Por Orden"
+
+msgid "Maximum Per Order"
+msgstr "Máximo Por Orden"
+
+msgid "Sale Start Date"
+msgstr "Fecha de Inicio de Venta"
+
+msgid "Sale End Date"
+msgstr "Fecha de Fin de Venta"
+
+msgid "Visibility"
+msgstr "Visibilidad"
+
+msgid "Hide ticket before sale start date"
+msgstr "Ocultar ticket antes de la fecha de inicio de venta"
+
+msgid "Hide ticket after sale end date"
+msgstr "Ocultar ticket después de la fecha de fin de venta"
+
+msgid "Show available ticket quantity"
+msgstr "Mostrar cantidad de tickets disponibles"
+
+msgid "Hide ticket when sold out"
+msgstr "Ocultar ticket cuando se agote"
+
+msgid "Hide ticket unless user has applicable promo code"
+msgstr "Ocultar ticket a menos que el usuario tenga un código promocional aplicable"
+
+msgid "Hide this ticket from customers"
+msgstr "Ocultar este ticket a los clientes"
+
+# Ticket Table Messages
+msgid "No tickets to show"
+msgstr "No hay tickets para mostrar"
+
+msgid "You'll need at least one ticket to get started. Free, paid or let the user decide what to pay."
+msgstr "Necesitarás al menos un ticket para comenzar. Gratuito, pagado o deja que el usuario decida cuánto pagar."
+
+msgid "Create a Ticket"
+msgstr "Crear un Ticket"
+
+msgid "Please remove filters and set sorting to \"Homepage order\" to enable sorting"
+msgstr "Por favor, elimina los filtros y establece el orden a \"Orden de página principal\" para habilitar la ordenación"
+
+msgid "Tickets sorted successfully"
+msgstr "Tickets ordenados exitosamente"
+
+msgid "An error occurred while sorting the tickets. Please try again or refresh the page"
+msgstr "Ocurrió un error al ordenar los tickets. Por favor, intenta de nuevo o actualiza la página"
+
+# Posición del asiento
+msgid "Posición"
+msgstr "Posición"
+
+msgid "Ej: Izquierda Centro, Derecha Arriba..."
+msgstr "Ej: Izquierda Centro, Derecha Arriba..."
+
+msgid "Posición del asiento en el mapa (ej: Izquierda Arriba, Centro)"
+msgstr "Posición del asiento en el mapa (ej: Izquierda Arriba, Centro)"
+
+# Número de asiento
+msgid "Número de Asiento"
+msgstr "Número de Asiento"
+
+msgid "Ej: A1, B2, C3..."
+msgstr "Ej: A1, B2, C3..."
+
+msgid "Identificador del asiento (puede incluir letras y números)"
+msgstr "Identificador del asiento (puede incluir letras y números)"
+
+# Secciones del mapa
+msgid "Anarajando"
+msgstr "Anaranjado"
+
+msgid "Verde"
+msgstr "Verde"
+
+msgid "Morado"
+msgstr "Morado"
+
+msgid "Amarillo"
+msgstr "Amarillo"
+
+msgid "Rojo"
+msgstr "Rojo"
+
+msgid "Fucsia"
+msgstr "Fucsia"
+
+msgid "Gris"
+msgstr "Gris"
+
+msgid "Azul"
+msgstr "Azul"
+
+msgid "Rosa"
+msgstr "Rosa"
+
+msgid "Blanco"
+msgstr "Blanco"
+
+msgid "Negro"
+msgstr "Negro"
+
+# Mensajes de error y éxito
+msgid "You cannot delete this price tier because there are already tickets sold for this tier. You can hide it instead."
+msgstr "No puedes eliminar este nivel de precio porque ya hay tickets vendidos para este nivel. Puedes ocultarlo en su lugar."
+
+msgid "You must have at least one price tier"
+msgstr "Debes tener al menos un nivel de precio"
+
+msgid "Early bird"
+msgstr "Preventa"
+
+msgid "Tier {index + 1}"
+msgstr "Nivel {index + 1}"
+
+msgid "Hiding a ticket will prevent users from seeing it on the event page."
+msgstr "Ocultar un ticket evitará que los usuarios lo vean en la página del evento."
+
+msgid "Hide this tier from users"
+msgstr "Ocultar este nivel a los usuarios"
+
+msgid "Add all from section"
+msgstr "Agregar todos de esta sección"
+
+msgid "Select tickets"
+msgstr "Seleccionar tickets"
+
+msgid "Select tickets for {position}"
+msgstr "Seleccionar tickets para {position}"
+
+msgid "Position"
+msgstr "Posición"
+
+msgid "Section"
+msgstr "Sección"
+
+msgid "Seat Number"
+msgstr "Número de Asiento"
+
+msgid "Clear filters"
+msgstr "Limpiar filtros"
+
+msgid "Clear search"
+msgstr "Limpiar búsqueda"
+
+msgid "Search by ticket name, section, seat number or position..."
+msgstr "Buscar por nombre de ticket, sección, número de asiento o posición..."
+
+msgid "Enter price"
+msgstr "Ingrese precio"
+
+msgid "Update prices"
+msgstr "Actualizar precios"
+
+msgid "Price updated successfully"
+msgstr "Precio actualizado exitosamente"
+
+msgid "Failed to update price"
+msgstr "Error al actualizar el precio"
+
+msgid "Select all"
+msgstr "Seleccionar todos"
+
+msgid "Using filtered selection"
+msgstr "Usando selección filtrada"
+
+msgid "Show all tickets"
+msgstr "Mostrar todos los tickets"
+
+msgid "Select position"
+msgstr "Seleccionar posición"
+
+msgid "Choose a position first"
+msgstr "Elija una posición primero"
+
+msgid "Select section for {position}"
+msgstr "Seleccionar sección para {position}"
+
+msgid "Choose a section"
+msgstr "Elija una sección"
+
+msgid "Select tickets for {position} - {section}"
+msgstr "Seleccionar tickets para {position} - {section}"
+
+msgid "No Position"
+msgstr "Sin Posición"
+
+msgid "No Section"
+msgstr "Sin Sección"
+
+msgid "No Seat"
+msgstr "Sin Asiento"
+
+msgid "Add all from position {position}"
+msgstr "Agregar todos de la posición {position}"
+
+msgid "Add all from section {section}"
+msgstr "Agregar todos de la sección {section}"
+    

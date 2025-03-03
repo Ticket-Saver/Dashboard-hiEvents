@@ -203,7 +203,7 @@ export const Tickets = () => {
                                 title={hasCreatedTickets ? t`Tickets already created` : t`Create from template`}
                             >
                                 {hasCreatedTickets ? t`Tickets Created` : t`Create from template`}
-                            </Button>
+                            </Button>  
                             {hasCreatedTickets && (
                                 <Button
                                     color={'yellow'}
@@ -231,8 +231,9 @@ export const Tickets = () => {
             </ToolBar>
 
             <TableSkeleton isVisible={!tickets || ticketsQuery.isFetching || !event}/>
-
+           
             {(tickets && event)
+            
                 && (<TicketsTable
                         openCreateModal={openCreateModal}
                         enableSorting={enableSorting}
@@ -240,7 +241,6 @@ export const Tickets = () => {
                         event={event}
                     />
                 )}
-
             {!!tickets?.length && (
                 <Pagination value={searchParams.pageNumber}
                             onChange={(value) => setSearchParams({pageNumber: value})}

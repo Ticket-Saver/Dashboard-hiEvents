@@ -34,6 +34,24 @@ class TicketRepository extends BaseRepository implements TicketRepositoryInterfa
             };
         }
 
+        if ($position = request('position')) {
+            $where[] = static function (Builder $builder) use ($position) {
+                $builder->where('position', 'LIKE', "%{$position}%");
+            };
+        }
+
+        if ($section = request('section')) {
+            $where[] = static function (Builder $builder) use ($section) {
+                $builder->where('section', 'LIKE', "%{$section}%");
+            };
+        }
+
+        if ($seatNumber = request('seat_number')) {
+            $where[] = static function (Builder $builder) use ($seatNumber) {
+                $builder->where('seat_number', 'LIKE', "%{$seatNumber}%");
+            };
+        }
+
         $this->model = $this->model->orderBy(
             $params->sort_by ?? TicketDomainObject::getDefaultSort(),
             $params->sort_direction ?? TicketDomainObject::getDefaultSortDirection(),

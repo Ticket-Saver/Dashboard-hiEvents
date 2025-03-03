@@ -3,6 +3,18 @@
 .cards {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+
+  .ticketRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    // Alinear el checkbox con el contenido
+    > :first-child {
+      margin-top: 1.5rem;
+    }
+  }
 
   .ticketCard {
     display: grid;
@@ -146,6 +158,17 @@
       }
     }
   }
+}
+
+.position {
+    // Usar los mismos estilos que los otros campos
+    margin-bottom: 0.5rem;
+    
+    .heading {
+        font-size: 0.75rem;
+        color: var(--mantine-color-gray-6);
+        margin-bottom: 0.25rem;
+    }
 }
 
 
