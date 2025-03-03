@@ -42,4 +42,5 @@ WORKDIR /app
 
 RUN yarn install  # Asumiendo que usas yarn, ajusta según tu gestor de paquetes
 
-CMD ["/digitalocean-start.sh"]
+# En lugar de usar el script como punto de entrada, ejecuta comandos directamente
+CMD ["sh", "-c", "export VITE_FRONTEND_URL=${APP_FRONTEND_URL:-\"/\"} && echo \"Starting with VITE_FRONTEND_URL=${VITE_FRONTEND_URL}\" && exec /startup.sh"]
