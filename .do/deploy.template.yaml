@@ -4,9 +4,6 @@ spec:
     - name: hi-events
       dockerfile_path: Dockerfile
       http_port: 80
-      git:
-        repo_clone_url: https://github.com/Ticket-Saver/Dashboard-hiEvents.git
-        branch: main
       envs:
         - key: APP_KEY
           scope: RUN_TIME
