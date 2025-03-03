@@ -17,31 +17,29 @@ RUN apk update && apk add --no-cache \
     php-sodium \
     php-pcntl
 
-# Copiar todo el backend
-COPY backend /app/backend
+# Copiar todo el proyecto
+COPY . /app
+WORKDIR /app
 
-# Instalar dependencias de PHP
+# Instalar dependencias de PHP en el backend
 WORKDIR /app/backend
 RUN composer install --no-dev
-RUN composer require nunomaduro/collision --dev
+RUN php artisan config:clear
+RUN php artisan cache:clear
 
-# Copiar todo el frontend
-COPY frontend /app/frontend
-
-# Reconstruir el frontend
+# Instalar dependencias y construir el frontend
 WORKDIR /app/frontend
 RUN npm install
 RUN npm run build
 
-# Copiar el script de inicio
-WORKDIR /
+# Copiar el script de inicio y hacerlo ejecutable
+WORKDIR /app
 COPY digitalocean-start.sh /digitalocean-start.sh
 RUN chmod +x /digitalocean-start.sh
 
-COPY . /app
-WORKDIR /app
+# Configurar permisos
+RUN chown -R www-data:www-data /app/backend/storage /app/backend/bootstrap/cache
+RUN chmod -R 775 /app/backend/storage /app/backend/bootstrap/cache
 
-RUN yarn install  # Asumiendo que usas yarn, ajusta según tu gestor de paquetes
-
-# En lugar de usar el script como punto de entrada, ejecuta comandos directamente
-CMD ["sh", "-c", "export VITE_FRONTEND_URL=${APP_FRONTEND_URL:-\"/\"} && echo \"Starting with VITE_FRONTEND_URL=${VITE_FRONTEND_URL}\" && exec /startup.sh"]
+# Punto de entrada
+CMD ["sh", "-c", "export VITE_FRONTEND_URL=${APP_FRONTEND_URL:-\"/\"} && echo \"Starting with VITE_FRONTEND_URL=${VITE_FRONTEND_URL}\" && /digitalocean-start.sh"]
