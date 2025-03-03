@@ -49,10 +49,11 @@ RUN composer install --no-dev --ignore-platform-reqs
 RUN php artisan config:clear
 RUN php artisan cache:clear
 
-# Instalar dependencias y construir el frontend
+# Instalar dependencias y construir el frontend para SSR
 WORKDIR /app/frontend
 RUN npm install
-RUN npm run build:csr
+RUN npm run build:ssr:client
+RUN npm run build:ssr:server
 
 # Copiar el script de inicio y hacerlo ejecutable
 WORKDIR /app
@@ -62,6 +63,10 @@ RUN chmod +x /digitalocean-start.sh
 # Configurar permisos
 RUN chown -R www-data:www-data /app/backend/storage /app/backend/bootstrap/cache
 RUN chmod -R 775 /app/backend/storage /app/backend/bootstrap/cache
+
+# Configurar variables de entorno para Stripe
+ENV STRIPE_KEY=pk_test
+ENV STRIPE_SECRET=sk_test
 
 # Punto de entrada
 CMD ["sh", "-c", "export VITE_FRONTEND_URL=${APP_FRONTEND_URL:-\"/\"} && echo \"Starting with VITE_FRONTEND_URL=${VITE_FRONTEND_URL}\" && /digitalocean-start.sh"]

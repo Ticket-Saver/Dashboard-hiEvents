@@ -27,6 +27,12 @@ spec:
         - key: VITE_STRIPE_PUBLISHABLE_KEY
           scope: RUN_AND_BUILD_TIME
           value: pk_test
+        - key: STRIPE_KEY
+          scope: RUN_TIME
+          value: pk_test
+        - key: STRIPE_SECRET
+          scope: RUN_TIME
+          value: sk_test
         - key: LOG_CHANNEL
           scope: RUN_TIME
           value: stderr
