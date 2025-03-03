@@ -30,7 +30,7 @@ RUN php artisan cache:clear
 # Instalar dependencias y construir el frontend
 WORKDIR /app/frontend
 RUN npm install
-RUN npm run build
+RUN npm run build:csr
 
 # Copiar el script de inicio y hacerlo ejecutable
 WORKDIR /app

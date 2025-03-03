@@ -2,6 +2,7 @@ import {defineConfig} from "vite";
 import {lingui} from "@lingui/vite-plugin";
 import react from "@vitejs/plugin-react";
 import {copy} from "vite-plugin-copy";
+import path from 'path';
 
 export default defineConfig({
     server: {
@@ -27,5 +28,14 @@ export default defineConfig({
     },
     ssr: {
         noExternal: ["react-helmet-async"],
+    },
+    build: {
+        outDir: 'dist',
+        emptyOutDir: true,
+        rollupOptions: {
+            input: {
+                main: path.resolve(__dirname, 'index.html'),
+            },
+        },
     },
 });
