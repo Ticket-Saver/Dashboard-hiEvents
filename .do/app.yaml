@@ -168,53 +168,41 @@ jobs:
 name: hi-events-backend-app
 region: sfo
 services:
-  - alerts:
-      - operator: GREATER_THAN
-        rule: CPU_UTILIZATION
-        value: 50
-        window: FIVE_MINUTES
-      - operator: GREATER_THAN
-        rule: MEM_UTILIZATION
-        value: 50
-        window: FIVE_MINUTES
-    dockerfile_path: /backend/Dockerfile
+  - name: hi-events-backend
     github:
+      repo: Ticket-Saver/Dashboard-hiEvents
       branch: main
       deploy_on_push: true
-      repo: HiEventsDev/Hi.Events
+    dockerfile_path: /backend/Dockerfile
     http_port: 8080
     instance_count: 1
     instance_size_slug: professional-xs
-    log_destinations:
-      - logtail:
-          token: XXX
-        name: LogTail
-    name: hi-events-backend
-    source_dir: backend
-  - build_command: yarn build
-    environment_slug: node-js
     envs:
-      - key: VITE_STRIPE_PUBLISHABLE_KEY
-        scope: RUN_AND_BUILD_TIME
-        value: pk_test_XXX
+      - key: DATABASE_URL
+        value: ${hi-events-postgres.DATABASE_URL}
+      - key: REDIS_URL
+        value: ${hi-events-redis.REDIS_URL}
       - key: VITE_API_URL_SERVER
-        scope: RUN_AND_BUILD_TIME
         value: ${APP_URL}/api
       - key: VITE_API_URL_CLIENT
-        scope: RUN_AND_BUILD_TIME
         value: ${APP_URL}/api
       - key: VITE_FRONTEND_URL
-        scope: RUN_AND_BUILD_TIME
         value: ${APP_URL}
+    jobs:
+      - name: hi-events-migration
+        run_command: php artisan migrate --force
+        dockerfile_path: /backend/Dockerfile
+        source_dir: backend
+  - name: hi-events-frontend
     github:
+      repo: Ticket-Saver/Dashboard-hiEvents
       branch: main
       deploy_on_push: true
-      repo: HiEventsDev/Hi.Events
+    build_command: yarn build
+    run_command: yarn start
     http_port: 5678
     instance_count: 1
     instance_size_slug: professional-xs
-    name: hi-events-frontend
-    run_command: yarn start
     source_dir: frontend
 workers:
   - dockerfile_path: /backend/Dockerfile
