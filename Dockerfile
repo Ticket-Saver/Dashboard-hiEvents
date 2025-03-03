@@ -22,7 +22,8 @@ COPY backend /app/backend
 
 # Instalar dependencias de PHP
 WORKDIR /app/backend
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+RUN composer install --no-dev
+RUN composer require nunomaduro/collision --dev
 
 # Copiar todo el frontend
 COPY frontend /app/frontend
